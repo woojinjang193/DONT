@@ -154,7 +154,7 @@ RectTransform:
   m_Father: {fileID: 5594260752758004687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 5053339701662018484}
   - component: {fileID: 1851221215828926735}
   - component: {fileID: 8414029832667908714}
+  - component: {fileID: 1358173760698293319}
   m_Layer: 5
   m_Name: SpeakerButton
   m_TagString: UI
@@ -315,15 +316,15 @@ RectTransform:
   m_GameObject: {fileID: 1532842639307303303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 5, z: 1}
+  m_LocalScale: {x: 0.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4517788531677433844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 900.3, y: 480.8}
-  m_SizeDelta: {x: 104.0287, y: 15.2209}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -58.69995, y: -61.19995}
+  m_SizeDelta: {x: 104.02869, y: 19.220886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3886426423699946710
 CanvasRenderer:
@@ -353,7 +354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec445f6f25e524f4dadc141d9391763c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: addc99a63e4746c47b65bcf3c51d92ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -464,6 +465,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 49.1122, y: 10.33816}
   m_EdgeRadius: 0
+--- !u!114 &1358173760698293319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532842639307303303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf843b66678b98640b77eddb6c9d62f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Unmute: {fileID: 21300000, guid: addc99a63e4746c47b65bcf3c51d92ed, type: 3}
+  Mute: {fileID: 21300000, guid: def3073c852ae4242bbedbf3a1e5f0bc, type: 3}
 --- !u!1 &1827308286623963106
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +587,7 @@ RectTransform:
   m_Father: {fileID: 7794917291077832462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1024,17 +1039,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &172671000181185880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1100,7 @@ RectTransform:
   m_Father: {fileID: 3382246874507000539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1366,7 +1381,7 @@ RectTransform:
   m_Father: {fileID: 7465184929450596468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1445,10 +1460,10 @@ RectTransform:
   - {fileID: 3879881246606539344}
   m_Father: {fileID: 4517788531677433844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 820.3, y: 399.4}
-  m_SizeDelta: {x: -1716.9901, y: -978.61}
+  m_AnchoredPosition: {x: -139.70001, y: -140.6}
+  m_SizeDelta: {x: 203.00989, y: 101.390015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5455764842874088690
 CanvasRenderer:
