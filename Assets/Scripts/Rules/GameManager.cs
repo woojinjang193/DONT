@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
 
 
+    private GameRuleManager gameRuleManager;
     private PlayerContoller player;
     public bool isMouseOnUI;
 
@@ -43,22 +44,32 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameRuleManager = GameRuleManager.Instance;
         AudioManager.instance.PlayBgm();
 
     }
 
     private void Update()
     {
-        
-       if (player.isDead)
-       {
-            WhatsNextScene();
+        if (!player.isDead && gameRuleManager != null && gameRuleManager.ShouldDie())
+        {
+            KillPlayer();
+        }
 
-       }
+
+        if (gameRuleManager != null)
+        {
+            gameRuleManager.FrameCheck();
+
+            if (player.isDead)
+            {
+                RetryOrLeave();
+
+            }
             
-        
+        }
 
-      if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             OpenMenu();
         }
@@ -72,7 +83,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void WhatsNextScene()
+    public void RetryOrLeave()
     {
         //Debug.Log("플레이어 죽음, R키 누르면 씬 리로드");
         retryInfo.SetActive(true);

@@ -143,7 +143,7 @@ public class PlayerContoller : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
 
         isDead = true;
-        GameManager.Instance.WhatsNextScene();
+        GameManager.Instance.RetryOrLeave();
     }
 
 }

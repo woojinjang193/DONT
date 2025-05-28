@@ -51,7 +51,7 @@ public class PooledObject : MonoBehaviour
         else
         {
             ReturnPool();
-       
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.BulletHit);
         }
             
         

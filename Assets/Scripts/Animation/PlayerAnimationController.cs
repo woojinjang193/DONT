@@ -15,6 +15,10 @@ public class PlayerAnimationController : MonoBehaviour
     private readonly int JUMP_HASH = Animator.StringToHash("Jump");
     private readonly int ATTACK_HASH = Animator.StringToHash("Attack");
 
+  //void Awake()
+  //{
+  //    animator = GetComponent<Animator>();
+  //}
 
     public void PlayerIdle()
     {

@@ -5,19 +5,22 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Killable
-  - Monster
   - Bullet
+  - Monster
+  - Killable
+  - Cage
+  - Cursor
+  - UI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Cursor
+  - Player
+  - Monster
   - 
   - 
   - 
