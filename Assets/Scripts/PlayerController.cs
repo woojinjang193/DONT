@@ -15,6 +15,7 @@ public class PlayerContoller : MonoBehaviour
 
     [SerializeField] private PlayerAnimationController animController;
     [SerializeField] private GameObject playerDieEffect;
+    //[SerializeField] private MouseCursor cursor;
 
     private Rigidbody2D rigid;
     private SpriteRenderer downerSpriteRenderer;
@@ -39,11 +40,13 @@ public class PlayerContoller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isDead)
         {
             PlayerJump();
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Jump);
         }
 
         if (Input.GetMouseButtonDown(0) && canAttack && !isDead && !EventSystem.current.IsPointerOverGameObject())
         {
             PlayerAttack();
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Shoot);
         }
     }
 
@@ -101,7 +104,7 @@ public class PlayerContoller : MonoBehaviour
             animController.SetJumping(false);
         }
 
-        if (collision.gameObject.CompareTag("Monster"))
+        if (collision.gameObject.CompareTag("Monster") || collision.gameObject.CompareTag("Killable"))
         {   
             PlayerDie();
             
@@ -135,6 +138,7 @@ public class PlayerContoller : MonoBehaviour
             spriteRenderer.enabled = false;
         }
 
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.PlayerDie);
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
 

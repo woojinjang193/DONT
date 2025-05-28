@@ -12,7 +12,14 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public static GameManager Instance => instance;
 
+    [SerializeField] private GameObject retryPanel;
+    [SerializeField] private GameObject retryInfo;
+    [SerializeField] private GameObject gameMenu;
+
+
+
     private PlayerContoller player;
+    public bool isMouseOnUI;
 
     private void Awake()
     {
@@ -30,25 +37,47 @@ public class GameManager : MonoBehaviour
             player = FindObjectOfType<PlayerContoller>();
         }
 
+        retryInfo.SetActive(false);
+        retryPanel.SetActive(false);
     }
 
     private void Start()
     {
+        AudioManager.instance.PlayBgm();
+
     }
 
     private void Update()
     {
-      if (player.isDead)
+        
+       if (player.isDead)
        {
-         WhatsNextScene();
+            WhatsNextScene();
 
        }
             
+        
 
+      if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenMenu();
+        }
+
+    }
+    public void KillPlayer()
+    {
+        if (!player.isDead)
+        {
+            player.PlayerDie();
+        }
     }
 
     public void WhatsNextScene()
     {
+        //Debug.Log("플레이어 죽음, R키 누르면 씬 리로드");
+        retryInfo.SetActive(true);
+        retryPanel.SetActive(true);
+
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -64,6 +93,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OpenMenu()
+    {
+        bool isActive = gameMenu.activeSelf;
+        gameMenu.SetActive(!isActive);
+    }
 
 
 }
