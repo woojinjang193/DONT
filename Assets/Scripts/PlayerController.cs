@@ -87,6 +87,11 @@ public class PlayerContoller : MonoBehaviour
 
         }
 
+        if ( collision.gameObject.CompareTag("Monster"))
+        {
+            PlayerDie();
+        }
+
     }
 
 
