@@ -8,6 +8,9 @@ public class PooledObject : MonoBehaviour
 {
     public ObjectPool returnPool;
     [SerializeField] float returnTime;
+    [SerializeField] private BulletParticle CarrotParticle;
+
+
     private float timer;
 
     private void Start()
@@ -50,14 +53,13 @@ public class PooledObject : MonoBehaviour
 
         else
         {
+            
             ReturnPool();
+            CarrotParticle.ParticalOn();
             AudioManager.instance.PlaySfx(AudioManager.Sfx.BulletHit);
         }
-            
-        
-
-
-       
     }
+
+  
 
 }

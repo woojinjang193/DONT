@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7095781237854902102}
   - component: {fileID: 2614048488140226377}
   - component: {fileID: 946803156886236003}
-  - component: {fileID: -4131855904193168120}
+  - component: {fileID: 414905877284752832}
+  - component: {fileID: 8290414405758079056}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12cf294db01f68043a161b0ba57c07d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnPool: {fileID: 0}
   returnTime: 2
+  CarrotParticle: {fileID: 8290414405758079056}
 --- !u!50 &946803156886236003
 Rigidbody2D:
   serializedVersion: 4
@@ -127,9 +129,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &-4131855904193168120
-CircleCollider2D:
+  m_Constraints: 6
+--- !u!61 &414905877284752832
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -160,6 +162,29 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.027789801, y: 0.12383138}
+  m_SpriteTilingProperty:
+    border: {x: 0.34375, y: 0.375, z: 0, w: 0.34375}
+    pivot: {x: 0.67612517, y: 0.37616867}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.59217006, y: 0.2627689}
+  m_EdgeRadius: 0
+--- !u!114 &8290414405758079056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957440295235924049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db81218423ebd44a2d65b7c3ce250d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carrotFragments: {fileID: 6437632326150237641, guid: b3c54a42c46e93548bcad8d5ece4f906, type: 3}

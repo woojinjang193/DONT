@@ -108,7 +108,7 @@ public class PlayerContoller : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ground") && hit.collider != null && hit.collider.CompareTag("Ground"))
         {
-            Debug.Log("¹Ù´Ú");
+            //Debug.Log("¹Ù´Ú");
             isGrounded = true;
 
             animController.SetJumping(false);
