@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7286529608971714685}
   - component: {fileID: 6669914462123612877}
   - component: {fileID: 3320643866638229071}
+  - component: {fileID: 9046762687212873775}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Monster
@@ -124,6 +125,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6771358, y: 0.9220674}
   m_EdgeRadius: 0
+--- !u!114 &9046762687212873775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311181104244286751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e31c7e370a7146b35283f61f71d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bat: {fileID: 3911992408688306543}
 --- !u!1 &5166343560836761979
 GameObject:
   m_ObjectHideFlags: 0

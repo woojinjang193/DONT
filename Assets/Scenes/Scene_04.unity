@@ -3224,6 +3224,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 4465851254365632346, guid: 840004c23f7bfab438e5974c82430aa7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465851254365632346, guid: 840004c23f7bfab438e5974c82430aa7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.1921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465851254365632346, guid: 840004c23f7bfab438e5974c82430aa7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2424444
+      objectReference: {fileID: 0}
     - target: {fileID: 8158304436905313999, guid: 840004c23f7bfab438e5974c82430aa7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.94
