@@ -4,14 +4,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DontJumpClear : MonoBehaviour
+public class StageClear : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Scene_04");
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            int nextScene = currentScene + 1;
+
+            SceneManager.LoadScene(nextScene);
             AudioManager.instance.PlaySfx(AudioManager.Sfx.NextScene);
+       
+
+            
         }
     }
 
