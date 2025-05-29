@@ -9,6 +9,7 @@ public class Exit : MonoBehaviour
         if (collision.collider.CompareTag("Bullet"))
         {
             Debug.Log("게임종료");
+            Application.Quit();
         }
     }
 }

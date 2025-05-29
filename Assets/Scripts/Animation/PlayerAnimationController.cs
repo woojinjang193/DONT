@@ -10,10 +10,10 @@ public class PlayerAnimationController : MonoBehaviour
     private Animator animator;
     private bool isJumping = false;
 
-    private readonly int IDLE_HASH = Animator.StringToHash("Idle");
-    private readonly int WALK_HASH = Animator.StringToHash("Walk");
-    private readonly int JUMP_HASH = Animator.StringToHash("Jump");
-    private readonly int ATTACK_HASH = Animator.StringToHash("Attack");
+   // private readonly int IDLE_HASH = Animator.StringToHash("Idle");
+   // private readonly int WALK_HASH = Animator.StringToHash("Walk");
+   // private readonly int JUMP_HASH = Animator.StringToHash("Jump");
+   // private readonly int ATTACK_HASH = Animator.StringToHash("Attack");
 
   //void Awake()
   //{

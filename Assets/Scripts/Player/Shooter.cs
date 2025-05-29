@@ -9,14 +9,12 @@ public class Shooter : MonoBehaviour
     [SerializeField] Transform muzzlePointRight;
     [SerializeField] Transform muzzlePointLeft;
     [SerializeField] ObjectPool bulletPool;
-    [SerializeField] float fireDelay;
-
+ 
     [Range(10, 30)]
     [SerializeField] float bulletSpeed;
 
     private SpriteRenderer spriteRenderer;
 
-    private float lastFireTime = 0;
     private void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -25,13 +23,6 @@ public class Shooter : MonoBehaviour
 
     public void Fire() 
     {
-        
-        if (Time.time - lastFireTime < fireDelay)
-        {
-            return;
-        }
-        lastFireTime = Time.time;
-
         Transform muzzle = spriteRenderer.flipX ? muzzlePointLeft : muzzlePointRight;
         //<결과를 저장할 변수> = <조건> ? <조건이 True일때> : <조건이 False일때>;
 
@@ -40,23 +31,7 @@ public class Shooter : MonoBehaviour
         bulletRigibody.velocity = muzzle.right * bulletSpeed;
 
     }
-
-  // public void Fire(float speed)
-  // {
-  //     if (Time.time - lastFireTime < fireDelay)
-  //     {
-  //         return;
-  //     }
-  //     lastFireTime = Time.time;
-  //
-  //
-  //     PooledObject instance = bulletPool.GetPool(muzzlePoint.position, muzzlePoint.rotation);
-  //     Rigidbody2D bulletRigibody = instance.GetComponent<Rigidbody2D>();
-  //     bulletRigibody.velocity = muzzlePoint.right * speed;
-  //
-  // }
-
-    
+         
     }       
 
 

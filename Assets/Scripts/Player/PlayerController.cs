@@ -15,29 +15,34 @@ public class PlayerContoller : MonoBehaviour
 
     [SerializeField] private PlayerAnimationController animController;
     [SerializeField] private GameObject playerDieEffect;
-    //[SerializeField] private MouseCursor cursor;
 
     private Rigidbody2D rigid;
     private SpriteRenderer downerSpriteRenderer;
     private SpriteRenderer upperSpriteRenderer;
 
+    private float groundCheckDistance = 0.1f;
+    private LayerMask groundLayer; //필요한것만 검사하기위해
+
     private bool isGrounded;
-    public bool isDead = false;        
-
-
+    public bool isDead = false;
     private bool canAttack = true;
+    private bool isInTheAir = false;
 
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        groundLayer = LayerMask.GetMask("Ground");
         downerSpriteRenderer = transform.Find("DownerBody").GetComponent<SpriteRenderer>();
         upperSpriteRenderer = transform.Find("UpperBody").GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isDead)
+        CheckGroundWithRay();
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isDead && !isInTheAir)
         {
             PlayerJump();
             AudioManager.instance.PlaySfx(AudioManager.Sfx.Jump);
@@ -47,6 +52,22 @@ public class PlayerContoller : MonoBehaviour
         {
             PlayerAttack();
             AudioManager.instance.PlaySfx(AudioManager.Sfx.Shoot);
+        }
+
+        
+    }
+
+    private void CheckGroundWithRay()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
+        if (hit.collider == null)
+
+        {
+            isInTheAir = true;
+        }
+        else
+        {
+            isInTheAir = false;
         }
     }
 
@@ -91,16 +112,20 @@ public class PlayerContoller : MonoBehaviour
         rigid.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         isGrounded = false;
 
+
+
         animController.SetJumping(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             //Debug.Log("바닥");
             isGrounded = true;
-
+            isInTheAir = false;
             animController.SetJumping(false);
         }
 

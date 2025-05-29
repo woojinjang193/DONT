@@ -228,7 +228,6 @@ MonoBehaviour:
   shooter: {fileID: 4810106246358656670}
   animController: {fileID: 3505050276140352546}
   playerDieEffect: {fileID: 8623087237108217876, guid: 41196592391b5a14a92a4f13375bea3c, type: 3}
-  cursor: {fileID: 0}
   isDead: 0
 --- !u!114 &3505050276140352546
 MonoBehaviour:

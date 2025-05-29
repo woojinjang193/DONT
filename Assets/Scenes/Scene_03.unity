@@ -246,7 +246,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4745098, g: 0.1921569, b: 0.2053525, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 110494769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9be0dedc4654f64ba85e343c7e60d21, type: 3}
+  m_Script: {fileID: 11500000, guid: 3572a3a9e2e171c469aa519356d5902c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &241600529
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 271034164}
   - component: {fileID: 271034163}
   - component: {fileID: 271034162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 297146781}
   - component: {fileID: 297146783}
   - component: {fileID: 297146782}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 1044347413}
   - component: {fileID: 1044347412}
   - component: {fileID: 1044347411}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2006,7 +2006,7 @@ GameObject:
   - component: {fileID: 1522243081}
   - component: {fileID: 1522243083}
   - component: {fileID: 1522243082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2286,7 +2286,7 @@ GameObject:
   - component: {fileID: 1730775585}
   - component: {fileID: 1730775586}
   - component: {fileID: 1730775587}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2537,7 +2537,7 @@ GameObject:
   - component: {fileID: 2026333317}
   - component: {fileID: 2026333318}
   - component: {fileID: 2026333319}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
