@@ -3,18 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Bullet
+  - Monster
+  - Killable
+  - Cage
+  - Cursor
+  - UI
+  - FallingDeadLine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Cursor
+  - Player
+  - Monster
+  - Killable
   - 
   - 
   - 
