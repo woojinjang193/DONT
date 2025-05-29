@@ -2530,7 +2530,7 @@ GameObject:
   - component: {fileID: 1522243081}
   - component: {fileID: 1522243083}
   - component: {fileID: 1522243082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3611,7 +3611,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 1262588850}
-  blueScreen: {fileID: 491209613}
   five: {fileID: 1541973884}
   four: {fileID: 686150853}
   three: {fileID: 1533899196}

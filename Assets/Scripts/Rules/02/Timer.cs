@@ -6,7 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private GameObject arrow;
-    [SerializeField] private GameObject blueScreen;
+    //[SerializeField] private GameObject blueScreen;
     [SerializeField] private GameObject five;
     [SerializeField] private GameObject four;
     [SerializeField] private GameObject three;
@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     private bool didShowArrow = false;
     private bool didHideArrow = false;
     private bool didHideWall = false;
-    private bool didHideBlue = false;
+    //private bool didHideBlue = false;
     private bool didShow5 = false;
     private bool didShow4 = false;
     private bool didShow3 = false;
@@ -63,14 +63,14 @@ public class Timer : MonoBehaviour
             if (timer >= 19f && !didHideWall)
             {
                 movingWall.SetActive(false);
-                blueScreen.SetActive(true);
+                //blueScreen.SetActive(true);
                 didHideWall = true;
             }
 
-            if (timer >= 24f && !didHideBlue)
+            if (timer >= 24f)// && !didHideBlue)
             {
-                blueScreen.SetActive(false);
-                didHideBlue = true;
+                //blueScreen.SetActive(false);
+                //didHideBlue = true;
             }
 
 
@@ -136,7 +136,7 @@ public class Timer : MonoBehaviour
         {
             arrow.SetActive(false);
             movingWall.SetActive(false);
-            blueScreen.SetActive(false);
+           //blueScreen.SetActive(false);
             five.SetActive(false);
             four.SetActive(false);
             three.SetActive(false);

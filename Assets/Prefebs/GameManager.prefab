@@ -899,7 +899,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4522711601311097205}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: CountinueButton
         m_Mode: 1
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4522711601311097205}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4522711601311097205}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: TitleButton
         m_Mode: 1

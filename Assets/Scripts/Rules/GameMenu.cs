@@ -19,5 +19,6 @@ public class GameMenu : MonoBehaviour
     public void ExitButton()
     {
         Debug.Log("게임종료");
+        Application.Quit();
     }
 }

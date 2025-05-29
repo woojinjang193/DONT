@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5361732428726783643}
   - component: {fileID: 2267947117237169290}
   m_Layer: 0
-  m_Name: Falling
-  m_TagString: Untagged
+  m_Name: FallingDeadLine
+  m_TagString: FallingDeadLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
