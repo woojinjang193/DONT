@@ -53,8 +53,8 @@ public class StageSave : MonoBehaviour
         stageData = JsonUtility.FromJson<StageData>(data);
     }
 
-    public void ClearedStage() //데이타 변경해주는 함수 
-    {
-        stageData.stageClear += 1;
-    }
+  // public void ClearedStage() //데이타 변경해주는 함수 
+  // {
+  //     stageData.stageClear += 1;
+  // }
 }
