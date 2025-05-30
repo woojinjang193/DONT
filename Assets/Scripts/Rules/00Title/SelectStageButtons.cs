@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SelectStageButtons : MonoBehaviour
 {
+    [SerializeField] private GameObject selectStageGoBackButton;
     [SerializeField] private GameObject[] stageButtons;
+    [SerializeField] private GameObject player;
+    
     private void Start()
     {
         int cleared = StageSave.instance.stageData.stageClear;
 
         for (int i = 0; i < stageButtons.Length; i++)
         {
-            stageButtons[i].SetActive(i < cleared);
+            stageButtons[i].SetActive(i <= cleared);
         }
     }
 
@@ -81,5 +84,11 @@ public class SelectStageButtons : MonoBehaviour
     public void Stage13()
     {
 
+    }
+
+    public void GoBackToTitle()
+    {
+        selectStageGoBackButton.SetActive(false);
+        player.SetActive(true);
     }
 }

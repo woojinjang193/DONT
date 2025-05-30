@@ -8,6 +8,7 @@ public class SelectStageButton : MonoBehaviour
 {
     [SerializeField] Button selectStageButton;
     [SerializeField] GameObject selectStagePanel;
+    [SerializeField] private GameObject player;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class SelectStageButton : MonoBehaviour
         if (selectStageButton.interactable == true && collision.collider.CompareTag("Bullet"))
         {
             selectStagePanel.SetActive(true);
+            player.SetActive(false);
         }
         else
         {

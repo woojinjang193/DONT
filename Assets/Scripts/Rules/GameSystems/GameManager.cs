@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!player.isDead && gameRuleManager != null && gameRuleManager.ShouldDie())
+        if (player != null && !player.isDead && gameRuleManager != null && gameRuleManager.ShouldDie())
         {
             KillPlayer();
         }
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         {
             gameRuleManager.FrameCheck();
 
-            if (player.isDead)
+            if (player != null && player.isDead)
             {
                 RetryOrLeave();
 
@@ -116,11 +116,12 @@ public class GameManager : MonoBehaviour
     {
         string curStageName = SceneManager.GetActiveScene().name;  //씬 이름을 저장
 
-        int currentStageNumber = ConvertSecenNameToNumber(curStageName);  
+        int currentStageNumber = ConvertSceneNameToNumber(curStageName);  
         // 저장한 씬 이름을 ConvertSecenNameToNumber 함수의 매개변수로 넣고 currentStageIndex에 저장
 
         if (StageSave.instance.stageData.stageClear >= currentStageNumber)
         {
+
             Debug.Log("이미 클리어함");
             return;
         }
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"클리어: {curStageName}");
     }
 
-    private int ConvertSecenNameToNumber(string stageName)// 씬이름에서 숫자로 바꿔주는 함수
+    private int ConvertSceneNameToNumber(string stageName)// 씬이름에서 숫자로 바꿔주는 함수
     {
         string stageNumber = stageName.Replace("Scene_", ""); // 씬 이름에서 "Scene_" 를 ""로 바꿈
         return int.Parse(stageNumber); // 앞에 0이 있으면 지워줌 01 >> 1
