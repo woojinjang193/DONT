@@ -12,12 +12,10 @@ public class StageClear : MonoBehaviour
         {
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             int nextScene = currentScene + 1;
+            GameManager.Instance.ClearStage();
 
             SceneManager.LoadScene(nextScene);
             AudioManager.instance.PlaySfx(AudioManager.Sfx.NextScene);
-       
-
-            
         }
     }
 
