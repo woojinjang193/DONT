@@ -19,6 +19,7 @@ public class StartButton : MonoBehaviour
             }
             else
             {
+                GameManager.Instance.ClearStage();
                 SceneManager.LoadScene("Scene_01");
             }
         }
