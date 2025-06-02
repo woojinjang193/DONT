@@ -9,5 +9,6 @@ public class BulletParticle : MonoBehaviour
     public void ParticalOn()
     {
         Instantiate(carrotFragments, transform.position, Quaternion.identity);
+
     }
 }
