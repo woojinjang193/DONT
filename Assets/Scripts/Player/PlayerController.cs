@@ -55,6 +55,7 @@ public class PlayerContoller : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0) && canAttack && !isDead && !EventSystem.current.IsPointerOverGameObject())
+        // EventSystem.current.IsPointerOverGameObject()는 마우스가 ui위에 있는지 감지해주는 함수
         {
             PlayerAttack();
             AudioManager.instance.PlaySfx(AudioManager.Sfx.Shoot);
