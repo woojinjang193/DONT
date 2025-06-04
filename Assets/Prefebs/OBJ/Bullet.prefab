@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnPool: {fileID: 0}
-  returnTime: 2
+  returnTime: 1
   CarrotParticle: {fileID: 8290414405758079056}
 --- !u!50 &946803156886236003
 Rigidbody2D:

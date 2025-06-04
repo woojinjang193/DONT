@@ -10,20 +10,28 @@ public class SelectStageButton : MonoBehaviour
     [SerializeField] GameObject selectStagePanel;
     [SerializeField] private GameObject player;
 
+    private bool canContinue = false;
+
     private void Start()
     {
-        if (StageSave.instance.stageData.stageClear >= 1 )
+        ColorBlock buttonColor = selectStageButton.colors;
+
+        if (StageSave.instance.stageData.stageClear >= 0 )
         {
-            selectStageButton.interactable = true;
+            canContinue = true;
+            buttonColor.disabledColor = Color.white;
         }
         else
         {
-            selectStageButton.interactable = false;
+            canContinue = false;
+            buttonColor.disabledColor = Color.gray;
         }
+
+        selectStageButton.colors = buttonColor;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (selectStageButton.interactable == true && collision.collider.CompareTag("Bullet"))
+        if (canContinue && collision.collider.CompareTag("Bullet"))
         {
             selectStagePanel.SetActive(true);
             player.SetActive(false);

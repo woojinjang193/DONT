@@ -8,7 +8,7 @@ public class ButtonController : MonoBehaviour
     [SerializeField] private Sprite buttonUP;
     [SerializeField] private Sprite buttonDOWN;
 
-    [SerializeField] private UnityEvent buttonPressed;
+    [SerializeField] private UnityEvent buttonPressed; //버튼눌렀을때 이벤트 넣을수있게해줌
 
     private SpriteRenderer spriteRenderer;
 

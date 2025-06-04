@@ -14,13 +14,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject retryPanel;
     [SerializeField] private GameObject retryInfo;
-    [SerializeField] private GameObject gameMenu;
+    [SerializeField] public GameObject gameMenu;
 
 
 
     private GameRuleManager gameRuleManager;
     private PlayerContoller player;
     public bool isMouseOnUI;
+    public bool isMenuOpen;
 
     private void Awake()
     {
@@ -104,10 +105,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OpenMenu()
+    public void OpenMenu()
     {
-        bool isActive = gameMenu.activeSelf;
-        gameMenu.SetActive(!isActive);
+        isMenuOpen = gameMenu.activeSelf;
+        gameMenu.SetActive(!isMenuOpen);
     }
 
  

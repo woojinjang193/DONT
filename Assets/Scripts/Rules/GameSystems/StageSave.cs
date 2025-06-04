@@ -45,6 +45,7 @@ public class StageSave : MonoBehaviour
     {
         if (!File.Exists(path))
         {
+            stageData.stageClear = -1;
             SaveData();
         }
 

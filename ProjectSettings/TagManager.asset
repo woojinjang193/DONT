@@ -12,6 +12,9 @@ TagManager:
   - Cursor
   - UI
   - FallingDeadLine
+  - MonsterReturnWall
+  - BackTarget
+  - CatPatrolRange
   layers:
   - Default
   - TransparentFX
@@ -23,8 +26,8 @@ TagManager:
   - Player
   - Monster
   - Killable
-  - 
-  - 
+  - Cave
+  - MonsterReturnWall
   - 
   - 
   - 
