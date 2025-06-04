@@ -52,7 +52,7 @@ public class DontJump : MonoBehaviour, IGameRule
         // 시간지나면 힌트줌
         timer += Time.deltaTime;
 
-        if(timer>60f && !isHint1Showed)
+        if(timer>40f && !isHint1Showed)
         {
             hint1.SetActive(true);
             Debug.Log("hint1 출력");
@@ -60,7 +60,7 @@ public class DontJump : MonoBehaviour, IGameRule
         }
 
 
-        if (timer > 120f && !isHint2Showed)
+        if (timer > 60f && !isHint2Showed)
         {
             hint2.SetActive(true);
             Debug.Log("hint2 출력");
