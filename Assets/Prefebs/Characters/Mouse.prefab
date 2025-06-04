@@ -116,8 +116,9 @@ GameObject:
   m_Component:
   - component: {fileID: 220498162156631282}
   - component: {fileID: 642469418086849662}
-  - component: {fileID: 6739545589842418983}
   - component: {fileID: 4772041743054072635}
+  - component: {fileID: 6378637942934925850}
+  - component: {fileID: 5955885705759223135}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Monster
@@ -156,7 +157,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -168,19 +169,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6739545589842418983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8691525127279703932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 382ed658f4c2ae14b8c9d224bba42232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterDieEffect: {fileID: 8623087237108217876, guid: 56696e413d338a543b673222e5673202, type: 3}
 --- !u!61 &4772041743054072635
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -226,3 +214,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1726868, y: 0.7703177}
   m_EdgeRadius: 0
+--- !u!114 &6378637942934925850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691525127279703932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff010d86c90e2f44e92e73314a95f783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -12
+  spriteRenderer: {fileID: 2547529421686753151}
+--- !u!114 &5955885705759223135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691525127279703932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382ed658f4c2ae14b8c9d224bba42232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterDieEffect: {fileID: 8623087237108217876, guid: 56696e413d338a543b673222e5673202, type: 3}

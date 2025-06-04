@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectStageButtons : MonoBehaviour
+public class SelectStages : MonoBehaviour
 {
     [SerializeField] private GameObject selectStageGoBackButton;
     [SerializeField] private GameObject[] stageButtons;
@@ -88,7 +88,13 @@ public class SelectStageButtons : MonoBehaviour
 
     public void GoBackToTitle()
     {
+        if (GameManager.Instance.gameMenu.activeSelf) // 메뉴가 열려있으면 닫아줌
+        {
+            GameManager.Instance.OpenMenu();
+        }
+
         selectStageGoBackButton.SetActive(false);
         player.SetActive(true);
+
     }
 }

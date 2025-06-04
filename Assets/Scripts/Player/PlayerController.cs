@@ -5,6 +5,7 @@ using Cinemachine;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine.EventSystems;
+using static UnityEngine.UI.Image;
 public class PlayerContoller : MonoBehaviour
 {
 
@@ -20,8 +21,13 @@ public class PlayerContoller : MonoBehaviour
     private SpriteRenderer downerSpriteRenderer;
     private SpriteRenderer upperSpriteRenderer;
 
-    private float groundCheckDistance = 0.1f;
+    //private float groundCheckDistance = 0.1f;
     private LayerMask groundLayer; //필요한것만 검사하기위해
+
+    [SerializeField] private Vector2 boxSize = new Vector2(0.5f, 0.1f);
+    [SerializeField] private float boxDisdanceFromPlayer;
+
+
 
     private bool isGrounded;
     public bool isDead = false;
@@ -49,17 +55,19 @@ public class PlayerContoller : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0) && canAttack && !isDead && !EventSystem.current.IsPointerOverGameObject())
+        // EventSystem.current.IsPointerOverGameObject()는 마우스가 ui위에 있는지 감지해주는 함수
         {
             PlayerAttack();
             AudioManager.instance.PlaySfx(AudioManager.Sfx.Shoot);
         }
 
-        
+
     }
 
     private void CheckGroundWithRay()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, boxSize ,0f, Vector2.down, boxDisdanceFromPlayer, groundLayer);
+
         if (hit.collider == null)
 
         {
@@ -102,6 +110,11 @@ public class PlayerContoller : MonoBehaviour
         }
         else
         {
+           // 공중에서 안멈추게하면 난이도가 너무 높아짐
+          // if (isGrounded)
+          // {
+          //     rigid.velocity = new Vector2(0, rigid.velocity.y);
+          // }
             rigid.velocity = new Vector2(0, rigid.velocity.y);
             animController.PlayerWalk(false);
         }
@@ -119,7 +132,7 @@ public class PlayerContoller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
 
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -130,9 +143,9 @@ public class PlayerContoller : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Monster") || collision.gameObject.CompareTag("Killable"))
-        {   
+        {
             PlayerDie();
-            
+
         }
     }
 
@@ -170,5 +183,17 @@ public class PlayerContoller : MonoBehaviour
         isDead = true;
         GameManager.Instance.RetryOrLeave();
     }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+
+        Vector2 origin = (Vector2)transform.position + new Vector2(0f, -0.5f);
+
+
+        Gizmos.DrawWireCube(origin + Vector2.down * boxDisdanceFromPlayer, boxSize);
+    }
+
 
 }
